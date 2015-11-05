@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>B.E.E.T. ~ Bot de Eventos Extremeños Tecnológicos</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/grid12.css">
+	<link rel="stylesheet" type="text/css" href="css/onepage-scroll.css">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		
+		body {
+			font-family: Open Sans;
+			font-weight: 300;
+		}
+		section.landing {
+			font-size: 24px;
+		}
+
+		section.landing h1 {
+			font-size: 100px;
+			color: #19DD89;
+			font-family: Montserrat;
+			font-weight: 700;
+		}
+
+		section.landing .text {
+			text-align: center;
+			padding-top: 50px;
+		}
+
+		section.landing a {
+			display: block;
+			padding: 10px;
+			border: 2px solid black;
+			max-width: 200px;
+			text-align: center;
+			margin: 0 auto;
+			margin-top: 20px;
+			color: black;
+			text-decoration: none;
+		}
+
+		section.landing a:hover {
+			color: #19DD89;
+			border: 2px solid #19DD89;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<section class="landing">
+			<div class="container">
+				<div class="col-sm-5">
+					<object type="image/svg+xml" data="img/beet-logo.svg">Your browser does not support SVG</object>
+				</div>
+				<div class="col-sm-7 text">
+					<span>Hola, soy</span>
+					<h1>B.E.E.T.</h1>
+					<span class="subtitle">(<strong>B</strong>ot de <strong>E</strong>ventos <strong>E</strong>xtremeños <strong>T</strong>ecnológicos)</span>
+					<div class="buttons">
+						<a href="#" onclick="moveTo('.main', 2);">Ver eventos</a>
+						<a href="#">Enviar evento</a>
+						<a href="#" onclick="moveTo('.main', 3);">¿Qué es esto?</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<h2>Aquí va el calendario</h2>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<h2>Aquí va el acerca de</h2>
+			</div>
+		</section>
+	</div>
+	<script src="js/onepagescroll.min.js"></script>
+	<script type="text/javascript">
+		onePageScroll(".main", {
+			sectionContainer: "section",     
+			easing: "ease",                  
+			animationTime: 1000,
+			pagination: false,
+			updateURL: false,
+			beforeMove: function(index) {},
+			afterMove: function(index) {},
+			loop: false,
+			keyboard: true, 
+			responsiveFallback: false
+		});
+	</script>
+</body>
+</html>
