@@ -13,16 +13,15 @@
 		body {
 			font-family: Open Sans;
 			font-weight: 300;
-		}
-		section.landing {
 			font-size: 24px;
 		}
 
-		section.landing h1 {
-			font-size: 100px;
+		h1 {
+			font-size: 120px;
 			color: #19DD89;
 			font-family: Montserrat;
 			font-weight: 700;
+			margin: -20px 0px;
 		}
 
 		section.landing .text {
@@ -30,21 +29,55 @@
 			padding-top: 50px;
 		}
 
-		section.landing a {
-			display: block;
+		section.calendar {
+			background: #19DD89;
+		}
+
+		h2 {
+			font-family: Montserrat;
+			font-weight: 400;
+			margin-top: 30px;
+			font-size: 48px;
+		}
+
+		a {
+			color: #1FA67A;
+			text-decoration: none;
+		}
+
+		a.button {
 			padding: 10px;
 			border: 2px solid black;
 			max-width: 200px;
 			text-align: center;
-			margin: 0 auto;
-			margin-top: 20px;
+			margin: 20px auto;
 			color: black;
 			text-decoration: none;
 		}
 
-		section.landing a:hover {
+		a.button:hover {
 			color: #19DD89;
 			border: 2px solid #19DD89;
+		}
+
+		.buttons a {
+			display: block;
+		}
+
+		ul {
+			list-style-type: none;
+			text-align: left;
+		}
+		ul li {
+			padding: 10px;
+			margin-bottom: 10px;
+			font-size: 32px;
+		}
+		ul li span.number {
+			padding: 5px 20px;
+			border: 2px solid black;
+			border-radius: 10000px;
+			margin-right: 10px;
 		}
 	</style>
 </head>
@@ -56,23 +89,24 @@
 					<object type="image/svg+xml" data="img/beet-logo.svg">Your browser does not support SVG</object>
 				</div>
 				<div class="col-sm-7 text">
-					<span>Hola, soy</span>
+					<span class="hi">Hola, soy</span>
 					<h1>B.E.E.T.</h1>
-					<span class="subtitle">(<strong>B</strong>ot de <strong>E</strong>ventos <strong>E</strong>xtremeños <strong>T</strong>ecnológicos)</span>
+					<span class="subtitle">y difundo eventos de tecnología en Extremadura</span>
+					<h2>¿Qué quieres hacer?</h2>
 					<div class="buttons">
-						<a href="#" onclick="moveTo('.main', 2);">Ver eventos</a>
-						<a href="#">Enviar evento</a>
-						<a href="#" onclick="moveTo('.main', 3);">¿Qué es esto?</a>
+						<a class="button" href="#" onclick="moveTo('.main', 2);">Ver eventos</a>
+						<a class="button" href="#">Enviar evento</a>
+						<a class="button" href="#" onclick="moveTo('.main', 3);">Saber más</a>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section>
+		<section class="calendar">
 			<div class="container">
 				<h2>Aquí va el calendario</h2>
 			</div>
 		</section>
-		<section>
+		<section class="about">
 			<div class="container">
 				<h2>Aquí va el acerca de</h2>
 			</div>
@@ -84,7 +118,7 @@
 			sectionContainer: "section",     
 			easing: "ease",                  
 			animationTime: 1000,
-			pagination: false,
+			pagination: true,
 			updateURL: false,
 			beforeMove: function(index) {},
 			afterMove: function(index) {},
