@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/grid12.css">
 	<link rel="stylesheet" type="text/css" href="css/onepage-scroll.css">
+	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 	<style type="text/css">
@@ -31,6 +32,10 @@
 
 		section.calendar {
 			background: #19DD89;
+		}
+
+		section.calendar h2 {
+			color: white;
 		}
 
 		h2 {
@@ -79,6 +84,10 @@
 			border-radius: 10000px;
 			margin-right: 10px;
 		}
+
+		#event-calendar .fc-view {
+			background: white;
+		}
 	</style>
 </head>
 <body>
@@ -103,15 +112,21 @@
 		</section>
 		<section class="calendar">
 			<div class="container">
-				<h2>Aquí va el calendario</h2>
+				<h2>Calendario de eventos</h2>
+				<div id="event-calendar"></div>
 			</div>
 		</section>
 		<section class="about">
 			<div class="container">
-				<h2>Aquí va el acerca de</h2>
+				<h2>¿Qué es B.E.E.P.?</h2>
 			</div>
 		</section>
 	</div>
+	<script src="js/onepagescroll.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.js"></script>
+	<script src="js/onepagescroll.min.js"></script>
 	<script src="js/onepagescroll.min.js"></script>
 	<script type="text/javascript">
 		onePageScroll(".main", {
@@ -125,6 +140,14 @@
 			loop: false,
 			keyboard: true, 
 			responsiveFallback: false
+		});
+		$(document).ready(function() {
+
+
+			$('#event-calendar').fullCalendar({
+			// put your options and callbacks here
+			})
+
 		});
 	</script>
 </body>
