@@ -25,8 +25,15 @@
 			margin: -20px 0px;
 		}
 
-		section.landing .text {
+		p {
+			margin-bottom: 15px;
+		}
+
+		section.landing {
 			text-align: center;
+		}
+
+		section.landing .text {
 			padding-top: 50px;
 		}
 
@@ -50,6 +57,10 @@
 			text-decoration: none;
 		}
 
+		a:hover {
+			text-decoration: underline;
+		}
+
 		a.button {
 			padding: 10px;
 			border: 2px solid black;
@@ -63,6 +74,13 @@
 		a.button:hover {
 			color: #19DD89;
 			border: 2px solid #19DD89;
+			text-decoration: none;
+		}
+
+		a.twitter {
+			font-size: 48px;
+			font-family: Montserrat;
+			font-weight: 400;
 		}
 
 		.buttons a {
@@ -76,10 +94,9 @@
 		ul li {
 			padding: 10px;
 			margin-bottom: 10px;
-			font-size: 32px;
 		}
 		ul li span.number {
-			padding: 5px 20px;
+			padding: 5px 15px;
 			border: 2px solid black;
 			border-radius: 10000px;
 			margin-right: 10px;
@@ -91,8 +108,14 @@
 
 		.fc-event {
 			border-radius: 0px;
-			background-color: #D31996;
-			border-color: #D31996;
+			background: none;
+			border: 2px solid black;
+			color: black;
+		}
+
+		.fc-event:hover {
+			color: #19DD89;
+			border: 2px solid #19DD89;
 		}
 	</style>
 </head>
@@ -102,6 +125,7 @@
 			<div class="container">
 				<div class="col-sm-5">
 					<object type="image/svg+xml" data="img/beet-logo.svg">Your browser does not support SVG</object>
+					<a class="twitter" href="http://twitter.com/botbeet">@botbeet</a>
 				</div>
 				<div class="col-sm-7 text">
 					<span class="hi">Hola, soy</span>
@@ -124,7 +148,18 @@
 		</section>
 		<section class="about">
 			<div class="container">
-				<h2>¿Qué es B.E.E.P.?</h2>
+				<h2>¿Qué es B.E.E.T.?</h2>
+				<p>B.E.E.T. publica tus eventos tecnológicos en <a href="https://twitter.com/botbeet">Twitter</a> cuando:</p>
+				<ul>
+					<li><span class="number">1</span>Se añade</li>
+					<li><span class="number">2</span>Una semana antes del evento</li>
+					<li><span class="number">3</span>El día antes</li>
+				</ul>
+				<h2>¿Por qué B.E.E.T.?</h2>
+				<p>Hay más eventos tecnológicos de los que nos pensamos en Extremadura, pero a veces estos no llegan a gente interesada. ¿Quién no ha dicho aquello de <i>"si lo hubiese sabido hubiese ido"</i>?.</p>
+				<p>B.E.E.T. quiere ser un punto central de difusión para que ningún evento se pierda en la marea de las redes sociales, vengan de quién vengan: instituciones, universidad o grupos de de desarrollo locales.</p>
+				<h2>¿Cómo funciona?</h2>
+				<p>Simplemente envía los datos de tu evento y nosotros nos encargamos del resto :)</p>
 			</div>
 		</section>
 	</div>
@@ -151,7 +186,6 @@
 		});
 		$(document).ready(function() {
 
-
 			$('#event-calendar').fullCalendar({
 				height: 'auto',
 				lang: 'es',
@@ -160,7 +194,6 @@
 		            googleCalendarId: 'botbeet@gmail.com'
 		        }
 			})
-
 		});
 	</script>
 </body>
