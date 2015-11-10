@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/grid12.css">
 	<link rel="stylesheet" type="text/css" href="css/onepage-scroll.css">
+	<link rel="stylesheet" type="text/css" href="css/modal.css">
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
@@ -118,11 +119,15 @@
 			color: #19DD89;
 			border: 2px solid #19DD89;
 		}
+
+		.modal-close {
+			font-size: 20px;
+		}
 	</style>
 </head>
 <body>
 	<div class="main">
-		<section class="landing">
+		<section class="scroll landing">
 			<div class="container">
 				<div class="col-sm-5">
 					<object type="image/svg+xml" data="img/beet-logo.svg">Your browser does not support SVG</object>
@@ -135,19 +140,45 @@
 					<h2>¿Qué quieres hacer?</h2>
 					<div class="buttons">
 						<a class="button" href="#" onclick="moveTo('.main', 2);">Ver eventos</a>
-						<a class="button" href="#">Enviar evento</a>
+						<a class="button" href="#event-form">Enviar evento</a>
 						<a class="button" href="#" onclick="moveTo('.main', 3);">Saber más</a>
 					</div>
 				</div>
 			</div>
+			<section class="modal--show" id="event-form" tabindex="-1"
+			        role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+			    <div class="modal-inner">
+			        <header id="modal-label">Enviar nuevo evento</header>
+			        <div class="modal-content">
+						<form>
+							Nombre:<br>
+							<input type="text" name="title">
+							<br>
+							Lugar:<br>
+							<input type="text" name="location">
+							<br>
+							URL del evento:<br>
+							<input type="text" name="url">
+							<br>
+							Perfil de Twitter:<br>
+							<input type="text" name="twitter">
+							<br>
+						</form> 
+			        </div>
+			    </div>
+
+			    <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
+			        data-dismiss="modal">?</a>
+			</section>
 		</section>
-		<section class="calendar">
+		<section class="scroll calendar">
 			<div class="container">
 				<h2>Calendario de eventos</h2>
 				<div id="event-calendar"></div>
 			</div>
 		</section>
-		<section class="about">
+		<section class="scroll about">
 			<div class="container">
 				<h2>¿Qué es B.E.E.T.?</h2>
 				<p>B.E.E.T. publica tus eventos tecnológicos en <a href="https://twitter.com/botbeet">Twitter</a> cuando:</p>
@@ -173,22 +204,23 @@
 	<script src="js/onepagescroll.min.js"></script>
 	<script src="js/onepagescroll.min.js"></script>
 	<script type="text/javascript">
-		onePageScroll(".main", {
-			sectionContainer: "section",     
-			easing: "ease",                  
-			animationTime: 1000,
-			pagination: true,
-			updateURL: false,
-			beforeMove: function(index) {},
-			afterMove: function(index) {},
-			loop: false,
-			keyboard: true, 
-			responsiveFallback: false
-		});
+		
 		$(document).ready(function() {
-
+			onePageScroll(".main", {
+				sectionContainer: "section.scroll",     
+				easing: "ease",                  
+				animationTime: 1000,
+				pagination: true,
+				updateURL: false,
+				beforeMove: function(index) {},
+				afterMove: function(index) {},
+				loop: false,
+				keyboard: true, 
+				//responsiveFallback: 600
+			});
 			$('#event-calendar').fullCalendar({
 				height: 'auto',
+				contentHeight: 'auto',
 				lang: 'es',
 				googleCalendarApiKey: 'AIzaSyAiFoiHB-VQ_mving9VB8RFFRxURBE8fN8',
 		        events: {
