@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/grid12.css">
 	<link rel="stylesheet" type="text/css" href="css/onepage-scroll.css">
+	<link rel="stylesheet" type="text/css" href="css/floatl.min.css">
 	<link rel="stylesheet" type="text/css" href="css/modal.css">
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -33,6 +34,8 @@
 		section.landing {
 			text-align: center;
 		}
+
+		section.modal
 
 		section.landing .text {
 			padding-top: 50px;
@@ -123,6 +126,14 @@
 		.modal-close {
 			font-size: 20px;
 		}
+
+		.modal--show {
+			text-align: left;
+		}
+
+		.modal-content .form-elem {
+			margin-bottom: 10px;
+		}
 	</style>
 </head>
 <body>
@@ -152,18 +163,26 @@
 			        <header id="modal-label">Enviar nuevo evento</header>
 			        <div class="modal-content">
 						<form>
-							Nombre:<br>
-							<input type="text" name="title">
-							<br>
-							Lugar:<br>
-							<input type="text" name="location">
-							<br>
-							URL del evento:<br>
-							<input type="text" name="url">
-							<br>
-							Perfil de Twitter:<br>
-							<input type="text" name="twitter">
-							<br>
+							<div class="form-elem floatl js-floatl">
+								<label class="floatl__label">Título</label>
+								<input class="floatl__input" placeholder="Título" type="text">
+							</div>
+							<div class="form-elem floatl js-floatl">
+								<label class="floatl__label">Fecha y hora</label>
+								<input class="floatl__input" placeholder="Fecha y hora" type="text">
+							</div>
+							<div class="form-elem floatl js-floatl">
+								<label class="floatl__label">Lugar</label>
+								<input class="floatl__input" placeholder="Lugar" type="text">
+							</div>
+							<div class="form-elem floatl js-floatl">
+								<label class="floatl__label">URL</label>
+								<input class="floatl__input" placeholder="URL" type="text">
+							</div>
+							<div class="form-elem floatl js-floatl">
+								<label class="floatl__label">Cuenta Twitter</label>
+								<input class="floatl__input" placeholder="Cuenta Twitter" type="text">
+							</div>
 						</form> 
 			        </div>
 			    </div>
@@ -202,7 +221,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/gcal.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/lang/es.js"></script>
 	<script src="js/onepagescroll.min.js"></script>
-	<script src="js/onepagescroll.min.js"></script>
+	<script src="js/floatl.min.js"></script>
 	<script type="text/javascript">
 		
 		$(document).ready(function() {
@@ -226,7 +245,14 @@
 		        events: {
 		            googleCalendarId: 'botbeet@gmail.com'
 		        }
-			})
+			});
+			
+      		new Floatl(document.querySelectorAll('.js-floatl')[0]);
+      		new Floatl(document.querySelectorAll('.js-floatl')[1]);
+      		new Floatl(document.querySelectorAll('.js-floatl')[2]);
+      		new Floatl(document.querySelectorAll('.js-floatl')[3]);
+      		new Floatl(document.querySelectorAll('.js-floatl')[4]);
+    
 		});
 	</script>
 </body>
