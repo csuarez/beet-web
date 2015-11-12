@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="css/grid12.css">
 	<link rel="stylesheet" type="text/css" href="css/onepage-scroll.css">
 	<link rel="stylesheet" type="text/css" href="css/floatl.min.css">
-	<link rel="stylesheet" type="text/css" href="css/modal.css">
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
@@ -34,8 +33,6 @@
 		section.landing {
 			text-align: center;
 		}
-
-		section.modal
 
 		section.landing .text {
 			padding-top: 50px;
@@ -122,18 +119,6 @@
 			color: #19DD89;
 			border: 2px solid #19DD89;
 		}
-
-		.modal-close {
-			font-size: 20px;
-		}
-
-		.modal--show {
-			text-align: left;
-		}
-
-		.modal-content .form-elem {
-			margin-bottom: 10px;
-		}
 	</style>
 </head>
 <body>
@@ -151,45 +136,39 @@
 					<h2>¿Qué quieres hacer?</h2>
 					<div class="buttons">
 						<a class="button" href="#" onclick="moveTo('.main', 2);">Ver eventos</a>
-						<a class="button" href="#event-form">Enviar evento</a>
+						<a class="button" href="#" onclick="openModal('#new-event');">Enviar evento</a>
 						<a class="button" href="#" onclick="moveTo('.main', 3);">Saber más</a>
 					</div>
 				</div>
 			</div>
-			<section class="modal--show" id="event-form" tabindex="-1"
-			        role="dialog" aria-labelledby="modal-label" aria-hidden="true">
-
-			    <div class="modal-inner">
-			        <header id="modal-label">Enviar nuevo evento</header>
-			        <div class="modal-content">
-						<form>
-							<div class="form-elem floatl js-floatl">
-								<label class="floatl__label">Título</label>
-								<input class="floatl__input" placeholder="Título" type="text">
-							</div>
-							<div class="form-elem floatl js-floatl">
-								<label class="floatl__label">Fecha y hora</label>
-								<input class="floatl__input" placeholder="Fecha y hora" type="text">
-							</div>
-							<div class="form-elem floatl js-floatl">
-								<label class="floatl__label">Lugar</label>
-								<input class="floatl__input" placeholder="Lugar" type="text">
-							</div>
-							<div class="form-elem floatl js-floatl">
-								<label class="floatl__label">URL</label>
-								<input class="floatl__input" placeholder="URL" type="text">
-							</div>
-							<div class="form-elem floatl js-floatl">
-								<label class="floatl__label">Cuenta Twitter</label>
-								<input class="floatl__input" placeholder="Cuenta Twitter" type="text">
-							</div>
-						</form> 
-			        </div>
-			    </div>
-
-			    <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
-			        data-dismiss="modal">?</a>
-			</section>
+			<div id="new-event">
+				<form>
+					<div class="form-elem floatl js-floatl">
+						<label class="floatl__label">Título</label>
+						<input class="floatl__input" placeholder="Título" type="text">
+					</div>
+					<div class="form-elem floatl js-floatl">
+						<label class="floatl__label">Fecha y hora</label>
+						<input class="floatl__input" placeholder="Fecha y hora" type="text">
+					</div>
+					<div class="form-elem floatl js-floatl">
+						<label class="floatl__label">Lugar</label>
+						<input class="floatl__input" placeholder="Lugar" type="text">
+					</div>
+					<div class="form-elem floatl js-floatl">
+						<label class="floatl__label">URL</label>
+						<input class="floatl__input" placeholder="URL" type="text">
+					</div>
+					<div class="form-elem floatl js-floatl">
+						<label class="floatl__label">E-Mail</label>
+						<input class="floatl__input" placeholder="E-Mail" type="text">
+					</div>
+					<div class="form-elem floatl js-floatl">
+						<label class="floatl__label">Cuenta Twitter</label>
+						<input class="floatl__input" placeholder="Cuenta Twitter" type="text">
+					</div>
+				</form> 
+			</div>
 		</section>
 		<section class="scroll calendar">
 			<div class="container">
@@ -220,8 +199,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/gcal.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/lang/es.js"></script>
-	<script src="js/onepagescroll.min.js"></script>
 	<script src="js/floatl.min.js"></script>
+	<script src="js/jquery.easyModal.js"></script>
 	<script type="text/javascript">
 		
 		$(document).ready(function() {
@@ -246,14 +225,23 @@
 		            googleCalendarId: 'botbeet@gmail.com'
 		        }
 			});
+
+			$(function() {
+				$('#new-event').easyModal();
+			});
 			
       		new Floatl(document.querySelectorAll('.js-floatl')[0]);
       		new Floatl(document.querySelectorAll('.js-floatl')[1]);
       		new Floatl(document.querySelectorAll('.js-floatl')[2]);
       		new Floatl(document.querySelectorAll('.js-floatl')[3]);
       		new Floatl(document.querySelectorAll('.js-floatl')[4]);
+      		new Floatl(document.querySelectorAll('.js-floatl')[5]);
     
 		});
+
+		function openModal(selector) {
+			$(selector).trigger('openModal');
+		}
 	</script>
 </body>
 </html>
