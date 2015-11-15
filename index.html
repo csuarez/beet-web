@@ -119,6 +119,61 @@
 			color: #19DD89;
 			border: 2px solid #19DD89;
 		}
+
+		#new-event {
+			background: white;
+			padding: 2em 4em;
+			text-align: center;
+		}
+
+		#new-event input {
+			width: 100%;
+			border: 2px solid #ddd;
+			border-radius: 0px;
+			margin-bottom: 1em;
+			border-top: none;
+			border-right: none;
+		}
+
+		#new-event input:focus {
+			border: 2px solid #aaa;
+			border-top: none;
+			border-right: none;
+		}
+
+		#new-event input:valid {
+			border: 2px solid #1FA67A;
+			border-top: none;
+			border-right: none;
+		}
+
+		#new-event input:invalid {
+			box-shadow: none;
+		}
+
+		#new-event h2 {
+			margin-top: 0px;
+			margin-bottom: 0.5em;
+		}
+
+		#new-event a.button {
+			margin-top: 0.5em;
+			padding-right: 1.5em;
+			padding-left: 1.5em;
+		}
+
+		#new-event .button-wrapper {
+			margin-top: 1.5em;
+		}
+
+		.floatl--active .floatl__label {
+			background: none;
+		}
+
+		.floatl--focused .floatl__label {
+			color: #1FA67A;
+		}
+
 	</style>
 </head>
 <body>
@@ -142,32 +197,36 @@
 				</div>
 			</div>
 			<div id="new-event">
+				<h2>Envíanos un evento</h2>
 				<form>
 					<div class="form-elem floatl js-floatl">
 						<label class="floatl__label">Título</label>
-						<input class="floatl__input" placeholder="Título" type="text">
+						<input id="title" class="floatl__input" required placeholder="Título" type="text">
 					</div>
 					<div class="form-elem floatl js-floatl">
 						<label class="floatl__label">Fecha y hora</label>
-						<input class="floatl__input" placeholder="Fecha y hora" type="text">
+						<input id="date" class="floatl__input" required placeholder="Fecha y hora" type="text">
 					</div>
 					<div class="form-elem floatl js-floatl">
 						<label class="floatl__label">Lugar</label>
-						<input class="floatl__input" placeholder="Lugar" type="text">
+						<input id="location" class="floatl__input" required placeholder="Lugar" type="text">
 					</div>
 					<div class="form-elem floatl js-floatl">
 						<label class="floatl__label">URL</label>
-						<input class="floatl__input" placeholder="URL" type="text">
+						<input id="url" class="floatl__input" required placeholder="URL" type="text">
 					</div>
 					<div class="form-elem floatl js-floatl">
 						<label class="floatl__label">E-Mail</label>
-						<input class="floatl__input" placeholder="E-Mail" type="text">
+						<input id="email" class="floatl__input" required placeholder="E-Mail" type="text">
 					</div>
 					<div class="form-elem floatl js-floatl">
 						<label class="floatl__label">Cuenta Twitter</label>
-						<input class="floatl__input" placeholder="Cuenta Twitter" type="text">
+						<input id="twitter" class="floatl__input" required placeholder="Cuenta Twitter" type="text">
 					</div>
-				</form> 
+				</form>
+				<div class="button-wrapper">
+					<a class="button" href="#" onClick="sendMail()">Enviar</a>
+				</div>
 			</div>
 		</section>
 		<section class="scroll calendar">
@@ -241,6 +300,28 @@
 
 		function openModal(selector) {
 			$(selector).trigger('openModal');
+		}
+
+		function sendMail() {
+			var title = document.getElementById('title').value;
+			var date = document.getElementById('date').value;
+			var location = document.getElementById('location').value;
+			var url = document.getElementById('url').value;
+			var twitter = document.getElementById('twitter').value;
+			var email = document.getElementById('email').value;
+			console.log(title);
+			var link = "mailto:beetbot@gmail.com"
+				+ "?subject=" + encodeURIComponent("Nuevo evento: " + title)
+				+ "&body=" + encodeURIComponent(
+					"Día: " + date 
+					+ "\nLugar: " + location 
+					+ "\nURL: " + url
+					+ "\nTwitter: " + twitter
+					+ "\nEmail: " + email
+				)
+			;
+
+			window.location.href = link;
 		}
 	</script>
 </body>
