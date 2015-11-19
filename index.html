@@ -180,7 +180,7 @@
 			color: #1FA67A;
 		}
 
-		.title {
+		/*.title {
 			height: 100%;
 		}
 
@@ -195,6 +195,25 @@
 		.title .landing-text {
 			display: inline-block;
 			vertical-align: middle;
+		}*/
+
+		.logo object {
+			height: 50%;
+		}
+
+
+		section.landing {
+			background: url('img/logo-big.png') no-repeat 50%;
+			position: relative;
+		}
+
+		section.landing .wrapper {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(255,255,255,0.9);
 		}
 
 	</style>
@@ -202,32 +221,28 @@
 <body>
 	<div class="main">
 		<section class="scroll landing">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-5 logo">
-						<object type="image/svg+xml" data="img/beet-logo.svg">Your browser does not support SVG</object>
-					</div>
-					<div class="col-xs-7 title">
-						<div class="landing-text">
-							<span class="hi">Hola, soy</span>
-							<h1>B.E.E.T.</h1>
-							<p class="subtitle">y difundo eventos de tecnología en Extremadura</p>
-							<a class="twitter" href="http://twitter.com/botbeet">@botbeet</a>
+			<div class="wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 title">
+							<div class="landing-text">
+								<span class="hi">Hola, soy</span>
+								<h1>B.E.E.T.</h1>
+								<p class="subtitle">y difundo eventos de tecnología en Extremadura</p>
+								<a class="twitter" href="http://twitter.com/botbeet">@botbeet</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12">
-						<h2>¿Qué quieres hacer?</h2>
-						<div class="buttons">
-							<a class="button" href="#" onclick="moveTo('.main', 2);">Ver eventos</a>
-							<a class="button" href="#" onclick="openModal('#new-event');">Enviar evento</a>
-							<a class="button" href="#" onclick="moveTo('.main', 3);">Saber más</a>
+					<div class="row">
+						<div class="col-xs-12">
+							<h2>¿Qué quieres hacer?</h2>
+							<div class="buttons">
+								<a class="button" href="#" onclick="moveTo('.main', 2);">Ver eventos</a>
+								<a class="button" href="#" onclick="openModal('#new-event');">Enviar evento</a>
+								<a class="button" href="#" onclick="moveTo('.main', 3);">Saber más</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-7 text">
-					
 				</div>
 			</div>
 			<div id="new-event">
