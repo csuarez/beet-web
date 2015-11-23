@@ -129,13 +129,14 @@
 			border: 2px solid #19DD89;
 		}
 
-		#new-event {
+		body.modal-visible .modal-content {
 			background: white;
-			padding: 2em 4em;
 			text-align: center;
+			padding: 40px;
+			box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 		}
 
-		#new-event input {
+		body.modal-visible .modal-content input {
 			width: 100%;
 			border: 2px solid #ddd;
 			border-radius: 0px;
@@ -144,34 +145,34 @@
 			border-right: none;
 		}
 
-		#new-event input:focus {
+		body.modal-visible .modal-content input:focus {
 			border: 2px solid #aaa;
 			border-top: none;
 			border-right: none;
 		}
 
-		#new-event input:valid {
+		body.modal-visible .modal-content input:valid {
 			border: 2px solid #1FA67A;
 			border-top: none;
 			border-right: none;
 		}
 
-		#new-event input:invalid {
+		body.modal-visible .modal-content input:invalid {
 			box-shadow: none;
 		}
 
-		#new-event h2 {
+		body.modal-visible .modal-content h2 {
 			margin-top: 0px;
 			margin-bottom: 0.5em;
 		}
 
-		#new-event a.button {
+		body.modal-visible .modal-content a.button {
 			margin-top: 0.5em;
 			padding-right: 1.5em;
 			padding-left: 1.5em;
 		}
 
-		#new-event .button-wrapper {
+		body.modal-visible .modal-content .button-wrapper {
 			margin-top: 1.5em;
 		}
 
@@ -213,6 +214,79 @@
 			display: inline-block;
 			vertical-align: middle;
 		}
+
+
+
+		#new-event {
+			display: none;
+		}
+
+
+		.modal {
+			display: block;
+			position: fixed;
+			content: "";
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(#000, 0.6);
+			z-index: -1;
+			opacity: 0;
+			font-size: 0;
+			transition: opacity 0.2s, z-index 0s 0.2s;
+			text-align: center;
+			overflow: hidden;
+			overflow-y: auto;
+			white-space: nowrap;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.modal > * {
+			display: inline-block;
+			white-space: normal;
+			vertical-align: middle;
+			text-align: left;
+		}
+
+		.modal:before {
+			display: inline-block;
+			overflow: hidden;
+			width: 0;
+			height: 100%;
+			vertical-align: middle;
+			content: "";
+		}
+
+		.modal-visible .modal {
+			z-index: 99;
+			opacity: 1;
+			transition: opacity 0.2s;
+		}
+
+		.modal-inner {
+			position: relative;
+			overflow: hidden;
+			width: 90%;
+			max-height: 90%;
+			overflow-x: hidden;
+			overflow-y: auto;
+			background: #fff;
+			z-index: -1;
+			opacity: 0;
+			transform: scale(0);
+			transition: opacity 0.2s, transform 0.2s, z-index 0s 0.2s;
+			margin: 20px 0;
+			padding:20px;
+		}
+
+		.modal-visible .modal-inner {
+			z-index: 100;
+			opacity: 1;
+			transform: scale(1);
+			transition: opacity 0.2s, transform 0.2s;
+		}
+
 	</style>
 </head>
 <body>
@@ -229,10 +303,17 @@
 							<h2>¿Qué quieres hacer?</h2>
 							<div class="buttons">
 								<a class="button" href="#" onclick="moveTo('.main', 2);">Ver eventos</a>
-								<a class="button" href="#" onclick="openModal('#new-event');">Enviar evento</a>
+								<a class="button" href="#new-event" rel="modal:open">Enviar evento</a>
 								<a class="button" href="#" onclick="moveTo('.main', 3);">Saber más</a>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal">
+				<div class="modal-inner">
+					<div class="modal-content">
+						
 					</div>
 				</div>
 			</div>
@@ -299,8 +380,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/gcal.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/lang/es.js"></script>
 	<script src="js/floatl.min.js"></script>
-	<script src="js/jquery.easyModal.js"></script>
+	<script src="js/vanilla-modal.min.js"></script>
 	<script type="text/javascript">
+
+		var modal;
 		
 		$(document).ready(function() {
 			onePageScroll(".main", {
@@ -325,9 +408,9 @@
 		        }
 			});
 
-			$(function() {
-				$('#new-event').easyModal();
-			});
+			modal = new vanillaModal.VanillaModal({
+				clickOutside : true
+			})
 			
       		new Floatl(document.querySelectorAll('.js-floatl')[0]);
       		new Floatl(document.querySelectorAll('.js-floatl')[1]);
@@ -337,10 +420,6 @@
       		new Floatl(document.querySelectorAll('.js-floatl')[5]);
     
 		});
-
-		function openModal(selector) {
-			$(selector).trigger('openModal');
-		}
 
 		function sendMail() {
 			var title = document.getElementById('title').value;
