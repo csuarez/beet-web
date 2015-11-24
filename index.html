@@ -157,8 +157,11 @@
 			border-right: none;
 		}
 
-		body.modal-visible .modal-content input:invalid {
+		body.modal-visible .failed .modal-content input:invalid {
 			box-shadow: none;
+			border: 2px solid #950E2D;
+			border-top: none;
+			border-right: none;
 		}
 
 		body.modal-visible .modal-content h2 {
@@ -174,6 +177,15 @@
 
 		body.modal-visible .modal-content .button-wrapper {
 			margin-top: 1.5em;
+		}
+
+		.warning {
+			font-size: 0.5em;
+		}
+
+		.failed .warning {
+			color: #E52B56;
+			font-weight: bold;
 		}
 
 		.floatl--active .floatl__label {
@@ -273,8 +285,7 @@
 			background: #fff;
 			z-index: -1;
 			opacity: 0;
-			transform: scale(0);
-			transition: opacity 0.2s, transform 0.2s, z-index 0s 0.2s;
+			transition: opacity 0.2s, z-index 0s 0.2s;
 			margin: 20px 0;
 			padding:20px;
 		}
@@ -282,7 +293,6 @@
 		.modal-visible .modal-inner {
 			z-index: 100;
 			opacity: 1;
-			transform: scale(1);
 			transition: opacity 0.2s, transform 0.2s;
 		}
 
@@ -318,6 +328,7 @@
 			</div>
 			<div id="new-event">
 				<h2>Envíanos un evento</h2>
+				<p class="warning">Todos los campos son obligatorios</p>
 				<form>
 					<div class="form-elem floatl js-floatl">
 						<label class="floatl__label">Título</label>
@@ -427,19 +438,21 @@
 			var url = document.getElementById('url').value;
 			var twitter = document.getElementById('twitter').value;
 			var email = document.getElementById('email').value;
-			console.log(title);
-			var link = "mailto:beetbot@gmail.com"
-				+ "?subject=" + encodeURIComponent("Nuevo evento: " + title)
-				+ "&body=" + encodeURIComponent(
-					"Día: " + date 
-					+ "\nLugar: " + location 
-					+ "\nURL: " + url
-					+ "\nTwitter: " + twitter
-					+ "\nEmail: " + email
-				)
-			;
-
-			window.location.href = link;
+			if ((title) && (date) && (location) && (url) && (twitter) && (email)) {
+				var link = "mailto:beetbot@gmail.com"
+					+ "?subject=" + encodeURIComponent("Nuevo evento: " + title)
+					+ "&body=" + encodeURIComponent(
+						"Día: " + date 
+						+ "\nLugar: " + location 
+						+ "\nURL: " + url
+						+ "\nTwitter: " + twitter
+						+ "\nEmail: " + email
+					)
+				;
+				window.location.href = link;
+			} else {
+				$('.modal').addClass('failed');
+			}
 		}
 	</script>
 </body>
