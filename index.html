@@ -420,14 +420,10 @@
 			modal = new vanillaModal.VanillaModal({
 				clickOutside : true
 			})
-			
-      		new Floatl(document.querySelectorAll('.js-floatl')[0]);
-      		new Floatl(document.querySelectorAll('.js-floatl')[1]);
-      		new Floatl(document.querySelectorAll('.js-floatl')[2]);
-      		new Floatl(document.querySelectorAll('.js-floatl')[3]);
-      		new Floatl(document.querySelectorAll('.js-floatl')[4]);
-      		new Floatl(document.querySelectorAll('.js-floatl')[5]);
-    
+
+			$('.js-floatl').each(function(index) {
+				new Floatl(this);
+			});
 		});
 
 		function sendMail() {
