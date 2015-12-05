@@ -40,6 +40,7 @@
 
 		section.calendar {
 			background: #19DD89;
+			padding-top: 30px;
 		}
 
 		section.calendar h2 {
@@ -321,7 +322,8 @@
 			</div>
 			<div class="modal">
 				<div class="modal-inner">
-					<div class="modal-content">	
+					<div class="modal-content">
+						
 					</div>
 				</div>
 			</div>
@@ -361,7 +363,6 @@
 		</section>
 		<section class="scroll calendar">
 			<div class="container">
-				<h2>Calendario de eventos</h2>
 				<div id="event-calendar"></div>
 			</div>
 		</section>
@@ -408,7 +409,7 @@
 				//responsiveFallback: 600
 			});
 			$('#event-calendar').fullCalendar({
-				contentHeight: window.innerHeight - 200,
+				contentHeight: window.innerHeight - 140,
 				lang: 'es',
 				googleCalendarApiKey: 'AIzaSyCx8wi3Jn-REO_7izFs057nhAn79l04ouI',
 		        events: {
@@ -433,7 +434,7 @@
 			var twitter = document.getElementById('twitter').value;
 			var email = document.getElementById('email').value;
 			if ((title) && (date) && (location) && (url) && (twitter) && (email)) {
-				var link = "mailto:botbeet@gmail.com"
+				var link = "mailto:beetbot@gmail.com"
 					+ "?subject=" + encodeURIComponent("Nuevo evento: " + title)
 					+ "&body=" + encodeURIComponent(
 						"Día: " + date 
