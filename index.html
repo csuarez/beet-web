@@ -40,6 +40,7 @@
 
 		section.calendar {
 			background: #19DD89;
+			padding-top: 30px;
 		}
 
 		section.calendar h2 {
@@ -227,7 +228,9 @@
 			vertical-align: middle;
 		}
 
-
+		section.about {
+			overflow-y: scroll;
+		}
 
 		#new-event {
 			display: none;
@@ -362,7 +365,6 @@
 		</section>
 		<section class="scroll calendar">
 			<div class="container">
-				<h2>Calendario de eventos</h2>
 				<div id="event-calendar"></div>
 			</div>
 		</section>
@@ -375,11 +377,12 @@
 					<li><span class="number">2</span>Una semana antes del evento</li>
 					<li><span class="number">3</span>El día anterior al mismo</li>
 				</ul>
+				<h2>¿Cómo funciona?</h2>
+				<p>Simplemente envía los datos de tu evento y nosotros nos encargamos del resto :)</p>
 				<h2>¿Por qué B.E.E.T.?</h2>
 				<p>Hay más eventos tecnológicos de los que creemos en Extremadura, pero a veces éstos no llegan a las personas interesadas ¿Quién no ha dicho aquello de <i>"si lo hubiese sabido antes..."</i>?</p>
 				<p>B.E.E.T. quiere ser un punto central de difusión para que ningún evento se pierda en la marea de las redes sociales, vengan de quién vengan: instituciones, centros universitarios o grupos de de desarrollo locales.</p>
-				<h2>¿Cómo funciona?</h2>
-				<p>Simplemente envía los datos de tu evento y nosotros nos encargamos del resto :)</p>
+				<p><i>By <a href="http://csuarez.me">csuarez</a></i></p>
 			</div>
 		</section>
 	</div>
@@ -409,25 +412,21 @@
 				//responsiveFallback: 600
 			});
 			$('#event-calendar').fullCalendar({
-				contentHeight: window.innerHeight - 200,
+				contentHeight: window.innerHeight - 140,
 				lang: 'es',
-				googleCalendarApiKey: 'AIzaSyAiFoiHB-VQ_mving9VB8RFFRxURBE8fN8',
+				googleCalendarApiKey: 'AIzaSyCx8wi3Jn-REO_7izFs057nhAn79l04ouI',
 		        events: {
-		            googleCalendarId: 'botbeet@gmail.com'
+		            googleCalendarId: 'a6t348mhlhd1mv75fe5apgcuf8@group.calendar.google.com'
 		        }
 			});
 
 			modal = new vanillaModal.VanillaModal({
 				clickOutside : true
 			})
-			
-      		new Floatl(document.querySelectorAll('.js-floatl')[0]);
-      		new Floatl(document.querySelectorAll('.js-floatl')[1]);
-      		new Floatl(document.querySelectorAll('.js-floatl')[2]);
-      		new Floatl(document.querySelectorAll('.js-floatl')[3]);
-      		new Floatl(document.querySelectorAll('.js-floatl')[4]);
-      		new Floatl(document.querySelectorAll('.js-floatl')[5]);
-    
+
+			$('.js-floatl').each(function(index) {
+				new Floatl(this);
+			});
 		});
 
 		function sendMail() {
@@ -453,6 +452,15 @@
 				$('.modal').addClass('failed');
 			}
 		}
+	</script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-71066224-1', 'auto');
+		ga('send', 'pageview');
 	</script>
 </body>
 </html>
