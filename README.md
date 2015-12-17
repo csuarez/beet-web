@@ -16,7 +16,7 @@ Fácil :). Consiste en un Google Calendar para almacenar los eventos, y un [Zapi
 ## ¡Esto está muy verde! Si falta *XXX*...
 Sí, este proyecto nace como un *10-hour project* que me planteé hace tiempo. Poco a poco iré ampliándolo y mejorándolo, según la respuesta que obtenga el proyecto. Cualquier persona puede ayudar. Si quieres ayudar y no sabes cómo, estas son algunas de las cosas pendientes:
 
-## Cosas pendientes
+## Tareas pendientes
 
 ### :yum: Pequeñas
 * Hacer un favicon.
@@ -27,6 +27,7 @@ Sí, este proyecto nace como un *10-hour project* que me planteé hace tiempo. P
 * Estudio SEO.
 * Mejorar la gestión de assets (Grunt/Gulp, LESS/SASS, minificación, etc.).
 * Usar un generador estático de webs (Jekyll, Hugo, etc.).
+* Gestor de dependencias externas (p.ej. Bower).
 
 ### :scream: Grandes
 * Versión responsive.
