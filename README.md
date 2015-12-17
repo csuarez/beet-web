@@ -3,7 +3,7 @@
 ![B.E.E.T. logo](/img/logo.png)
 
 ## ¿B.E.E.T.?
-**B**ot **E**xtremeño de **E**ventos **T**ecnológicos
+_**B**ot **E**xtremeño de **E**ventos **T**ecnológicos_
 
 B.E.E.T. es una web que publica automáticamente en Twitter información sobre eventos tecnológicos en Extremadura. Consiste en:
 
