@@ -1,6 +1,6 @@
 # B.E.E.T.
 
-![B.E.E.T. logo](https://raw.githubusercontent.com/csuarez/beet-web/master/img/logo.png)
+![B.E.E.T. logo](/img/logo.png)
 
 ## ¿B.E.E.T.?
 **B**ot **E**xtremeño de **E**ventos **T**ecnológicos
