@@ -6,12 +6,24 @@ Main Stylesheet
 @import 'reset';
 @import 'grid';
 @import 'floatl';
+@import 'animate';
 $main_color: #19dd89;
+
+::selection{
+    color: #222;
+    background: yellow; 
+}
+::-moz-selection{
+    color: #222;
+    background: yellow; 
+}
 
 body{
     font-family: 'Source Sans Pro', 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: 24px;
     font-weight: 300;
+
+    transition: all .3s;
 
     color: #222; 
 }
@@ -23,10 +35,15 @@ h1{
 
     margin: -20px 0;
 
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+
     color: $main_color;
     text-shadow: 2px 2px 0 darken($main_color, 15%), 4px 4px 0 darken($main_color, 30%); 
 }
-
+.hi, .subtitle{
+    padding: 2px;
+}
 p{
     margin-bottom: 15px; 
 }
@@ -383,7 +400,15 @@ footer{
 
 // Media Queries
 
-@media only screen and (max-width:480px){
+@media only screen and (max-width:540px){
+    .buttons .button{
+        display: block;
+
+        margin-right: auto;
+        margin-left: auto; 
+    } 
+}
+@media only screen and (max-width:500px){
     section.landing .container .title{
         margin-top: 2vh;
         h1{
