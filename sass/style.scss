@@ -11,11 +11,11 @@ $main_color: #19dd89;
 
 ::selection{
     color: #222;
-    background: yellow; 
+    background: yellow;
 }
 ::-moz-selection{
     color: #222;
-    background: yellow; 
+    background: yellow;
 }
 
 body{
@@ -25,7 +25,7 @@ body{
 
     transition: all .3s;
 
-    color: #222; 
+    color: #222;
 }
 
 h1{
@@ -39,31 +39,35 @@ h1{
             animation-delay: 2s;
 
     color: $main_color;
-    text-shadow: 2px 2px 0 darken($main_color, 15%), 4px 4px 0 darken($main_color, 30%); 
+    text-shadow: 2px 2px 0 darken($main_color, 15%), 4px 4px 0 darken($main_color, 30%);
 }
 .hi, .subtitle{
     padding: 2px;
 }
 p{
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
 }
 
 section.landing{
-    text-align: center; 
+    text-align: center;
 }
 
 section.landing .text{
-    padding-top: 50px; 
+    padding-top: 50px;
 }
 
 section.calendar{
     padding-top: 30px;
 
-    background: $main_color; 
+    background: $main_color;
+
+    .container {
+        padding-bottom: 30px;
+    }
 }
 
 section.calendar h2{
-    color: white; 
+    color: white;
 }
 section.about{
     margin-bottom: 100px;
@@ -71,8 +75,8 @@ section.about{
         margin-top: 60px;
         padding-bottom: 15px;
 
-        border-bottom: 1px dashed $main_color; 
-    } 
+        border-bottom: 1px dashed $main_color;
+    }
 }
 
 h2{
@@ -81,7 +85,7 @@ h2{
     font-weight: 400;
 
     margin-top: 40px;
-    margin-bottom: 25px; 
+    margin-bottom: 25px;
 }
 
 a{
@@ -92,8 +96,8 @@ a{
     &:hover{
         text-decoration: underline;
 
-        color: #1fa67a; 
-    } 
+        color: #1fa67a;
+    }
 }
 
 a.button{
@@ -107,7 +111,7 @@ a.button{
 
     color: black;
     border: 2px solid black;
-    background: rgba(255, 255, 255, .9); 
+    background: rgba(255, 255, 255, .9);
 }
 
 a.button:hover{
@@ -115,57 +119,57 @@ a.button:hover{
 
     color: $main_color;
     border: 2px solid $main_color;
-    background: white; 
+    background: white;
 }
 
 a.twitter{
     font-family: Montserrat;
     font-size: 48px;
-    font-weight: 400; 
+    font-weight: 400;
 }
 
 .buttons{
-    margin-top: 50px; 
+    margin-top: 50px;
 }
 
 .buttons a{
     display: inline;
 
     width: 200px;
-    margin-left: 20px; 
+    margin-left: 20px;
 }
 
 ul{
     list-style-type: none;
 
-    text-align: left; 
+    text-align: left;
 }
 ul li{
     margin-bottom: 10px;
-    padding: 10px; 
+    padding: 10px;
 }
 ul li span.number{
     margin-right: 10px;
     padding: 5px 15px;
 
     border: 2px solid black;
-    border-radius: 10000px; 
+    border-radius: 10000px;
 }
 
 #event-calendar .fc-view{
-    background: white; 
+    background: white;
 }
 
 .fc-event{
     color: black;
     border: 2px solid black;
     border-radius: 0;
-    background: none; 
+    background: none;
 }
 
 .fc-event:hover{
     color: $main_color;
-    border: 2px solid $main_color; 
+    border: 2px solid $main_color;
 }
 
 body.modal-visible .modal-content{
@@ -174,7 +178,7 @@ body.modal-visible .modal-content{
     text-align: center;
 
     background: white;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, .3); 
+    box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
 }
 
 body.modal-visible .modal-content input{
@@ -184,76 +188,76 @@ body.modal-visible .modal-content input{
     border: 2px solid #ddd;
     border-top: none;
     border-right: none;
-    border-radius: 0; 
+    border-radius: 0;
 }
 
 body.modal-visible .modal-content input:focus{
     border: 2px solid #aaa;
     border-top: none;
-    border-right: none; 
+    border-right: none;
 }
 
 body.modal-visible .modal-content input:valid{
     border: 2px solid #1fa67a;
     border-top: none;
-    border-right: none; 
+    border-right: none;
 }
 
 body.modal-visible .failed .modal-content input:invalid{
     border: 2px solid #950e2d;
     border-top: none;
     border-right: none;
-    box-shadow: none; 
+    box-shadow: none;
 }
 
 body.modal-visible .modal-content h2{
     margin-top: 0;
-    margin-bottom: .5em; 
+    margin-bottom: .5em;
 }
 
 body.modal-visible .modal-content a.button{
     margin-top: .5em;
     padding-right: 1.5em;
-    padding-left: 1.5em; 
+    padding-left: 1.5em;
 }
 
 body.modal-visible .modal-content .button-wrapper{
-    margin-top: 1.5em; 
+    margin-top: 1.5em;
 }
 
 .warning{
-    font-size: .5em; 
+    font-size: .5em;
 }
 
 .failed .warning{
     font-weight: bold;
 
-    color: #e52b56; 
+    color: #e52b56;
 }
 
 .floatl--active .floatl__label{
-    background: none; 
+    background: none;
 }
 
 .floatl--focused .floatl__label{
-    color: #1fa67a; 
+    color: #1fa67a;
 }
 
 section.landing{
     position: relative;
 
     background: url('/img/beet-logo.svg') no-repeat 50% 20%;
-    background-attachment: fixed; 
+    background-attachment: fixed;
 }
 
 section.landing .wrapper{
     height: 100vh;
 
-    background-color: rgba(255,255,255,.97); 
+    background-color: rgba(255,255,255,.97);
 }
 
 section.landing .container{
-    height: 100%; 
+    height: 100%;
 }
 
 section.landing .container .title{
@@ -261,7 +265,7 @@ section.landing .container .title{
 
     margin-top: 12vh;
 
-    vertical-align: middle; 
+    vertical-align: middle;
 }
 footer{
     width: 100%;
@@ -270,11 +274,11 @@ footer{
     text-align: center;
 
     color: #fff;
-    background-color: #222; 
+    background-color: #222;
 }
 
 #new-event{
-    display: none; 
+    display: none;
 }
 
 .modal{
@@ -297,7 +301,7 @@ footer{
     opacity: 0;
     background: rgba(#000, .6);
 
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal > *{
@@ -305,7 +309,7 @@ footer{
 
     text-align: left;
     vertical-align: middle;
-    white-space: normal; 
+    white-space: normal;
 }
 
 .modal:before{
@@ -316,7 +320,7 @@ footer{
     height: 100%;
 
     content: '';
-    vertical-align: middle; 
+    vertical-align: middle;
 }
 
 .modal-visible .modal{
@@ -324,7 +328,7 @@ footer{
 
     transition: opacity .2s;
 
-    opacity: 1; 
+    opacity: 1;
 }
 
 .modal-inner {
@@ -343,7 +347,7 @@ footer{
     transition: opacity .2s, z-index 0s .2s;
 
     opacity: 0;
-    background: #fff; 
+    background: #fff;
 }
 
 .modal-visible .modal-inner{
@@ -351,7 +355,7 @@ footer{
 
     transition: opacity .2s, transform .2s;
 
-    opacity: 1; 
+    opacity: 1;
 }
 
 // Overwriting cal styles
@@ -366,36 +370,36 @@ footer{
     &:hover{
         color: $main_color;
         border: 1px solid $main_color;
-        background-color: #fff; 
-    } 
+        background-color: #fff;
+    }
 }
 .fc-ltr .fc-basic-view .fc-day-number{
-    color: $main_color; 
+    color: $main_color;
 }
 
 
 // Github badge
 .github-corner:hover .octo-arm{
-    animation: octocat-wave 560ms ease-in-out; 
+    animation: octocat-wave 560ms ease-in-out;
 }
 @keyframes octocat-wave{
     0%,
     100%{
-        transform: rotate(0); 
+        transform: rotate(0);
     }20%,
     60%{
-        transform: rotate(-25deg); 
+        transform: rotate(-25deg);
     }40%,
     80%{
-        transform: rotate(10deg); 
-    } 
+        transform: rotate(10deg);
+    }
 }
 @media (max-width:500px){
     .github-corner:hover .octo-arm{
-        animation: none; 
+        animation: none;
     }.github-corner .octo-arm{
-        animation: octocat-wave 560ms ease-in-out; 
-    } 
+        animation: octocat-wave 560ms ease-in-out;
+    }
 }
 
 // Media Queries
@@ -405,8 +409,8 @@ footer{
         display: block;
 
         margin-right: auto;
-        margin-left: auto; 
-    } 
+        margin-left: auto;
+    }
 }
 @media only screen and (max-width:500px){
     section.landing .container .title{
@@ -415,16 +419,16 @@ footer{
             font-size: 75px;
 
             margin-top: 0;
-            margin-bottom: 0; 
-        } 
+            margin-bottom: 0;
+        }
     }
     h2{
-        font-size: 26px; 
+        font-size: 26px;
     }
     .buttons .button{
         display: block;
 
         margin-right: auto;
-        margin-left: auto; 
-    } 
+        margin-left: auto;
+    }
 }

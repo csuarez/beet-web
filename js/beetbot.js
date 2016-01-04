@@ -2,7 +2,7 @@ var modal;
 
 $(document).ready(function() {
     $('#event-calendar').fullCalendar({
-        contentHeight: window.innerHeight - 140,
+        contentHeight: 'auto',
         lang: 'es',
         googleCalendarApiKey: 'AIzaSyCx8wi3Jn-REO_7izFs057nhAn79l04ouI',
         events: {
