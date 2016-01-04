@@ -1,323 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title>B.E.E.T. ~ Bot de Eventos Extremeños Tecnológicos</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/grid12.css">
-	<link rel="stylesheet" type="text/css" href="css/onepage-scroll.css">
-	<link rel="stylesheet" type="text/css" href="css/floatl.min.css">
+	<meta name="description" content="B.E.E.T. ~ Bot de Eventos Extremeños Tecnológicos" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@botbeet" />
+	<meta name="twitter:title" content="B.E.E.T." />
+	<meta name="twitter:description" content="Bot de Eventos Extremeños Tecnológicos" />
+	<meta name="twitter:image" content="http://beet.tech/img/logo.png" />
+	<title>B.E.E.T. ~ Bot de Eventos Extremeños Tecnológicos</title>
+	<link rel="icon" href="img/logo.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
-	<style type="text/css">
-
-		body {
-			font-family: Open Sans;
-			font-weight: 300;
-			font-size: 24px;
-		}
-
-		h1 {
-			font-size: 120px;
-			color: #19DD89;
-			font-family: Montserrat;
-			font-weight: 700;
-			margin: -20px 0px;
-		}
-
-		p {
-			margin-bottom: 15px;
-		}
-
-		section.landing {
-			text-align: center;
-		}
-
-		section.landing .text {
-			padding-top: 50px;
-		}
-
-		section.calendar {
-			background: #19DD89;
-			padding-top: 30px;
-		}
-
-		section.calendar h2 {
-			color: white;
-		}
-
-		h2 {
-			font-family: Montserrat;
-			font-weight: 400;
-			margin-top: 30px;
-			font-size: 48px;
-		}
-
-		a {
-			color: #19DD89;
-			text-decoration: none;
-		}
-
-		a:hover {
-			color: #1FA67A;
-			text-decoration: underline;
-		}
-
-		a.button {
-			padding: 10px;
-			border: 2px solid black;
-			max-width: 200px;
-			text-align: center;
-			margin: 20px auto;
-			color: black;
-			text-decoration: none;
-			background: rgba(255, 255, 255, 0.9);
-			transition: all 200ms ease;
-		}
-
-		a.button:hover {
-			color: #19DD89;
-			border: 2px solid #19DD89;
-			text-decoration: none;
-			background: white;
-		}
-
-		a.twitter {
-			font-size: 48px;
-			font-family: Montserrat;
-			font-weight: 400;
-		}
-
-		.buttons {
-			margin-top: 50px;
-		}
-
-		.buttons a {
-			display: inline;
-			width: 200px;
-			margin-left: 20px;
-		}
-
-		ul {
-			list-style-type: none;
-			text-align: left;
-		}
-		ul li {
-			padding: 10px;
-			margin-bottom: 10px;
-		}
-		ul li span.number {
-			padding: 5px 15px;
-			border: 2px solid black;
-			border-radius: 10000px;
-			margin-right: 10px;
-		}
-
-		#event-calendar .fc-view {
-			background: white;
-		}
-
-		.fc-event {
-			border-radius: 0px;
-			background: none;
-			border: 2px solid black;
-			color: black;
-		}
-
-		.fc-event:hover {
-			color: #19DD89;
-			border: 2px solid #19DD89;
-		}
-
-		body.modal-visible .modal-content {
-			background: white;
-			text-align: center;
-			padding: 40px;
-			box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-		}
-
-		body.modal-visible .modal-content input {
-			width: 100%;
-			border: 2px solid #ddd;
-			border-radius: 0px;
-			margin-bottom: 1em;
-			border-top: none;
-			border-right: none;
-		}
-
-		body.modal-visible .modal-content input:focus {
-			border: 2px solid #aaa;
-			border-top: none;
-			border-right: none;
-		}
-
-		body.modal-visible .modal-content input:valid {
-			border: 2px solid #1FA67A;
-			border-top: none;
-			border-right: none;
-		}
-
-		body.modal-visible .failed .modal-content input:invalid {
-			box-shadow: none;
-			border: 2px solid #950E2D;
-			border-top: none;
-			border-right: none;
-		}
-
-		body.modal-visible .modal-content h2 {
-			margin-top: 0px;
-			margin-bottom: 0.5em;
-		}
-
-		body.modal-visible .modal-content a.button {
-			margin-top: 0.5em;
-			padding-right: 1.5em;
-			padding-left: 1.5em;
-		}
-
-		body.modal-visible .modal-content .button-wrapper {
-			margin-top: 1.5em;
-		}
-
-		.warning {
-			font-size: 0.5em;
-		}
-
-		.failed .warning {
-			color: #E52B56;
-			font-weight: bold;
-		}
-
-		.floatl--active .floatl__label {
-			background: none;
-		}
-
-		.floatl--focused .floatl__label {
-			color: #1FA67A;
-		}
-
-		section.landing {
-			background: url('img/logo-big.png') no-repeat 50% 20%;
-			position: relative;
-		}
-
-		section.landing .wrapper {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background-color: rgba(255,255,255,0.95);
-		}
-
-		section.landing .container {
-			height: 100%;
-		}
-
-		section.landing .container:before {
-			content: '';
-			display: inline-block;
-			height: 100%;
-			vertical-align: middle;
-			margin-right: -0.25em; /* Adjusts for spacing */
-		}
-
-		section.landing .container .title {
-			display: inline-block;
-			vertical-align: middle;
-		}
-
-		section.about {
-			overflow-y: scroll;
-		}
-
-		#new-event {
-			display: none;
-		}
-
-
-		.modal {
-			display: block;
-			position: fixed;
-			content: "";
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: rgba(#000, 0.6);
-			z-index: -1;
-			opacity: 0;
-			transition: opacity 0.2s, z-index 0s 0.2s;
-			text-align: center;
-			overflow: hidden;
-			overflow-y: auto;
-			white-space: nowrap;
-			-webkit-overflow-scrolling: touch;
-		}
-
-		.modal > * {
-			display: inline-block;
-			white-space: normal;
-			vertical-align: middle;
-			text-align: left;
-		}
-
-		.modal:before {
-			display: inline-block;
-			overflow: hidden;
-			width: 0;
-			height: 100%;
-			vertical-align: middle;
-			content: "";
-		}
-
-		.modal-visible .modal {
-			z-index: 99;
-			opacity: 1;
-			transition: opacity 0.2s;
-		}
-
-		.modal-inner {
-			position: relative;
-			overflow: hidden;
-			width: 90%;
-			max-height: 90%;
-			overflow-x: hidden;
-			overflow-y: auto;
-			background: #fff;
-			z-index: -1;
-			opacity: 0;
-			transition: opacity 0.2s, z-index 0s 0.2s;
-			margin: 20px 0;
-			padding:20px;
-		}
-
-		.modal-visible .modal-inner {
-			z-index: 100;
-			opacity: 1;
-			transition: opacity 0.2s, transform 0.2s;
-		}
-
-	</style>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div class="main">
-		<a href="https://github.com/csuarez/beet-web" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="z-index:666; fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-		<section class="scroll landing">
+		<a href="https://github.com/csuarez/beet-web" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="z-index:666; fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+		<section class="landing" id="section_landing">
 			<div class="wrapper">
 				<div class="container">
 					<div class="row title">
 						<div class="col-xs-12 title">
 							<span class="hi">Hola, soy</span>
-							<h1>B.E.E.T.</h1>
+							<h1 class="animated rubberBand">B.E.E.T.</h1>
 							<p class="subtitle">y difundo eventos de tecnología en Extremadura</p>
-							<a class="twitter" href="http://twitter.com/botbeet">@botbeet</a>
+							<a class="twitter" href="http://twitter.com/botbeet" title="@botbeet">@botbeet</a>
 							<h2>¿Qué quieres hacer?</h2>
 							<div class="buttons">
-								<a class="button" href="#" onclick="moveTo('.main', 2);">Ver eventos</a>
-								<a class="button" href="#new-event" rel="modal:open">Enviar evento</a>
-								<a class="button" href="#" onclick="moveTo('.main', 3);">Saber más</a>
+								<a class="button" href="#section_cal" title="Ver eventos">Ver eventos</a>
+								<a class="button" href="#new-event" rel="modal:open" title="Enviar evento">Enviar evento</a>
+								<a class="button" href="#section_about" title="Saber más">Saber más</a>
 							</div>
 						</div>
 					</div>
@@ -364,15 +78,15 @@
 				</div>
 			</div>
 		</section>
-		<section class="scroll calendar">
+		<section class="calendar" id="section_cal">
 			<div class="container">
-				<div id="event-calendar"></div>
+				<div id="event-calendar" class="animateme" data-when="enter" data-from="0.5" data-to="0" data-opacity="0" data-translatey="200" ></div>
 			</div>
 		</section>
-		<section class="scroll about">
+		<section class="about" id="section_about">
 			<div class="container">
 				<h2>¿Qué es B.E.E.T.?</h2>
-				<p>B.E.E.T. publica tus eventos tecnológicos en <a href="https://twitter.com/botbeet">Twitter</a> cuando:</p>
+				<p>B.E.E.T. publica tus eventos tecnológicos en <a href="https://twitter.com/botbeet" title="@botbeet">Twitter</a> cuando:</p>
 				<ul>
 					<li><span class="number">1</span>Éste se añade al calendario</li>
 					<li><span class="number">2</span>Una semana antes del evento</li>
@@ -381,13 +95,14 @@
 				<h2>¿Cómo funciona?</h2>
 				<p>Simplemente envía los datos de tu evento y nosotros nos encargamos del resto :)</p>
 				<h2>¿Por qué B.E.E.T.?</h2>
-				<p>Hay más eventos tecnológicos de los que creemos en Extremadura, pero a veces éstos no llegan a las personas interesadas ¿Quién no ha dicho aquello de <i>"si lo hubiese sabido antes..."</i>?</p>
+				<p>Hay más eventos tecnológicos de los que creemos en Extremadura, pero a veces éstos no llegan a las personas interesadas ¿Quién no ha dicho aquello de <em>"si lo hubiese sabido antes..."</em>?</p>
 				<p>B.E.E.T. quiere ser un punto central de difusión para que ningún evento se pierda en la marea de las redes sociales, vengan de quién vengan: instituciones, centros universitarios o grupos de de desarrollo locales.</p>
-				<p><i>By <a href="http://csuarez.me">csuarez</a></i></p>
 			</div>
 		</section>
+		<footer>
+			<p>By <a href="http://csuarez.me" title="César Suárez">csuarez</a></p>
+		</footer>
 	</div>
-	<script src="js/onepagescroll.min.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.js"></script>
@@ -395,65 +110,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/lang/es.js"></script>
 	<script src="js/floatl.min.js"></script>
 	<script src="js/vanilla-modal.min.js"></script>
-	<script type="text/javascript">
-
-		var modal;
-
-		$(document).ready(function() {
-			onePageScroll(".main", {
-				sectionContainer: "section.scroll",
-				easing: "ease",
-				animationTime: 1000,
-				pagination: true,
-				updateURL: false,
-				beforeMove: function(index) {},
-				afterMove: function(index) {},
-				loop: false,
-				keyboard: true,
-				//responsiveFallback: 600
-			});
-			$('#event-calendar').fullCalendar({
-				contentHeight: window.innerHeight - 140,
-				lang: 'es',
-				googleCalendarApiKey: 'AIzaSyCx8wi3Jn-REO_7izFs057nhAn79l04ouI',
-		        events: {
-		            googleCalendarId: 'a6t348mhlhd1mv75fe5apgcuf8@group.calendar.google.com'
-		        }
-			});
-
-			modal = new vanillaModal.VanillaModal({
-				clickOutside : true
-			})
-
-			$('.js-floatl').each(function(index) {
-				new Floatl(this);
-			});
-		});
-
-		function sendMail() {
-			var title = document.getElementById('title').value;
-			var date = document.getElementById('date').value;
-			var location = document.getElementById('location').value;
-			var url = document.getElementById('url').value;
-			var twitter = document.getElementById('twitter').value;
-			var email = document.getElementById('email').value;
-			if ((title) && (date) && (location) && (url) && (twitter) && (email)) {
-				var link = "mailto:botbeet@gmail.com"
-					+ "?subject=" + encodeURIComponent("Nuevo evento: " + title)
-					+ "&body=" + encodeURIComponent(
-						"Día: " + date
-						+ "\nLugar: " + location
-						+ "\nURL: " + url
-						+ "\nTwitter: " + twitter
-						+ "\nEmail: " + email
-					)
-				;
-				window.location.href = link;
-			} else {
-				$('.modal').addClass('failed');
-			}
-		}
-	</script>
+	<script src="js/beetbot.js"></script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

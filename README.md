@@ -19,9 +19,9 @@ Sí, este proyecto nace como un *10-hour project* que me planteé hace tiempo. P
 ## Tareas pendientes
 
 ### :yum: Pequeñas
-* Hacer un favicon.
-* Meta información para redes sociales (p.ej. Twitter Cards).
-* Sacar el CSS y el Javascript del `index.html`.
+* ~~Hacer un favicon.~~
+* ~~Meta información para redes sociales (p.ej. Twitter Cards).~~
+* ~~Sacar el CSS y el Javascript del `index.html`.~~
 
 ### :frowning: Medianas
 * Estudio SEO.
