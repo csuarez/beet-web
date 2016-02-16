@@ -8,7 +8,7 @@ _**B**ot **E**xtremeño de **E**ventos **T**ecnológicos_
 B.E.E.T. es una web que publica automáticamente en Twitter información sobre eventos tecnológicos en Extremadura. Consiste en:
 
 * [beet.tech](http://beet.tech): Una web donde los organizadores de los eventos pueden mandar la información de los eventos y un calendario con los mismos.
-* [@botbeet](http://twitter.com/botbeet): Un perfil de Twitter que se encarga de avisar periódicamente de los eventos existentes: cuando se añaden, la semana antes, tres días antes o el día anterior.
+* [@beet_tech](http://twitter.com/beet_tech): Un perfil de Twitter que se encarga de avisar periódicamente de los eventos existentes: cuando se añaden, la semana antes, tres días antes o el día anterior.
 
 ## ¿Cómo funciona?
 Fácil :). Consiste en un Google Calendar para almacenar los eventos, y un [Zapier](http://zapier.com) que maneja las publicaciones en Twitter.
